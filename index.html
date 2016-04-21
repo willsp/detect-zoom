@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Detect Zoom Test</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+
+</head>
+
+<body>
+  <div id="z"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<script src="detect-zoom.min.js"></script>
+<script type="text/javascript">
+  var zoom = detectZoom.zoom();
+
+  var zoomText = $('#z');
+  zoomText.html(zoom * 100 + ' %');
+
+  $(window).resize(function() {
+      zoomText.html(detectZoom.zoom() * 100 + ' %');
+  });
+
+</script>
+
+</html>
